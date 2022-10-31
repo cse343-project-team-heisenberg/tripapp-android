@@ -7,7 +7,7 @@
     tools:context=".ProfileActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imagaViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
