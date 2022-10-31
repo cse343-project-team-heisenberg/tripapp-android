@@ -4,15 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenActivity">
-
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:lottie_fileName="42070-travel-is-fun.json"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true">
-        </com.airbnb.lottie.LottieAnimationView>
+    tools:context=".DetailActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

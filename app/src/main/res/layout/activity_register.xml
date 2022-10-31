@@ -7,82 +7,91 @@
     tools:context=".Register">
 
   <ImageView
-      android:id="@+id/imageView2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:id="@+id/imagaViewProfile"
+      android:layout_width="311dp"
+      android:layout_height="280dp"
+      android:layout_marginTop="64dp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.051"
-      tools:srcCompat="@tools:sample/avatars" />
+      app:srcCompat="@drawable/ic_baseline_person_24" />
 
   <EditText
       android:id="@+id/editName"
       android:layout_width="297dp"
-      android:layout_height="0dp"
+      android:layout_height="45dp"
       android:ems="10"
       android:hint="isim"
       android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="215dp" />
+      app:layout_constraintBottom_toTopOf="@+id/editSurname"
+      app:layout_constraintEnd_toEndOf="@+id/imagaViewProfile"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="@+id/imagaViewProfile"
+      app:layout_constraintTop_toBottomOf="@+id/imagaViewProfile" />
 
   <EditText
       android:id="@+id/editSurname"
       android:layout_width="297dp"
-      android:layout_height="0dp"
+      android:layout_height="45dp"
       android:ems="10"
       android:hint="soyisim"
       android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="293dp" />
+      app:layout_constraintBottom_toTopOf="@+id/editTextMail"
+      app:layout_constraintEnd_toEndOf="@+id/editName"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="@+id/editName"
+      app:layout_constraintTop_toBottomOf="@+id/editName" />
 
   <EditText
       android:id="@+id/editTextMail"
       android:layout_width="297dp"
-      android:layout_height="0dp"
+      android:layout_height="45dp"
       android:ems="10"
       android:hint="Mail Adresiniz"
       android:inputType="textPersonName"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="369dp" />
+      app:layout_constraintBottom_toTopOf="@+id/editTextSifre"
+      app:layout_constraintEnd_toEndOf="@+id/editSurname"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/editSurname"
+      app:layout_constraintTop_toBottomOf="@+id/editSurname" />
 
   <EditText
       android:id="@+id/editTextSifre"
       android:layout_width="297dp"
-      android:layout_height="0dp"
+      android:layout_height="45dp"
       android:ems="10"
       android:hint="Şifreniz"
       android:inputType="textPassword"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="438dp" />
+      app:layout_constraintBottom_toTopOf="@+id/editagainTextSifre"
+      app:layout_constraintEnd_toEndOf="@+id/editTextMail"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="@+id/editTextMail"
+      app:layout_constraintTop_toBottomOf="@+id/editTextMail" />
 
   <EditText
       android:id="@+id/editagainTextSifre"
       android:layout_width="297dp"
-      android:layout_height="0dp"
+      android:layout_height="45dp"
       android:ems="10"
       android:hint="Again Şifreniz"
       android:inputType="textPassword"
-      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/buttonGiris"
+      app:layout_constraintEnd_toEndOf="@+id/editTextSifre"
       app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="511dp" />
+      app:layout_constraintStart_toStartOf="@+id/editTextSifre"
+      app:layout_constraintTop_toBottomOf="@+id/editTextSifre" />
 
   <Button
       android:id="@+id/buttonGiris"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Kaydol"
-      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@+id/editagainTextSifre"
       app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteY="587dp" />
+      app:layout_constraintStart_toStartOf="@+id/editagainTextSifre"
+      app:layout_constraintTop_toBottomOf="@+id/editagainTextSifre" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
