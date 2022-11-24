@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import com.example.runningapplication.databinding.ActivityMainBinding
 import com.example.runningapplication.databinding.ActivityRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -38,9 +37,10 @@ class Register : AppCompatActivity() {
                 */
                 val name = binding.editName.text.toString().trim()
                 val surname = binding.editSurname.text.toString().trim()
+                val username = binding.editusername.text.toString().trim()
                 val password = binding.editTextSifre.text.toString().trim()
                 val againpassword = binding.editagainTextSifre.text.toString().trim()
-            if(mail.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && surname.isNotEmpty() && password==againpassword ){
+            if(username.isNotEmpty() && mail.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && surname.isNotEmpty() && password==againpassword ){
                 shared?.let {
                     it.edit().putString("name",name).apply()
                     it.edit().putString("surname",surname).apply()
@@ -74,7 +74,6 @@ class Register : AppCompatActivity() {
                         if(p0.isSuccessful){
                             Toast.makeText(this@Register,"Mailinizi kontrol edin, mailinizi onaylayın", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@Register,MainActivity::class.java)
-                           //intent.putExtra("data",bitmap)
                            bitmap?.let {
 
                                intent.putExtra("flag",true)

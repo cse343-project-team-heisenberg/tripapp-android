@@ -10,9 +10,8 @@
       android:id="@+id/imagaViewProfile"
       android:layout_width="311dp"
       android:layout_height="280dp"
-      android:layout_marginTop="64dp"
+      android:layout_marginTop="28dp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/ic_baseline_person_24" />
@@ -37,11 +36,22 @@
       android:ems="10"
       android:hint="soyisim"
       android:inputType="textPersonName"
-      app:layout_constraintBottom_toTopOf="@+id/editTextMail"
+      app:layout_constraintBottom_toTopOf="@+id/editusername"
       app:layout_constraintEnd_toEndOf="@+id/editName"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="@+id/editName"
       app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+  <EditText
+      android:id="@+id/editusername"
+      android:layout_width="297dp"
+      android:layout_height="45dp"
+      android:ems="10"
+      android:hint="username"
+      android:inputType="textPersonName"
+      app:layout_constraintEnd_toEndOf="@+id/editSurname"
+      app:layout_constraintStart_toStartOf="@+id/editSurname"
+      tools:layout_editor_absoluteY="428dp" />
 
   <EditText
       android:id="@+id/editTextMail"
@@ -51,10 +61,10 @@
       android:hint="Mail Adresiniz"
       android:inputType="textPersonName"
       app:layout_constraintBottom_toTopOf="@+id/editTextSifre"
-      app:layout_constraintEnd_toEndOf="@+id/editSurname"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="@+id/editSurname"
-      app:layout_constraintTop_toBottomOf="@+id/editSurname" />
+      app:layout_constraintEnd_toEndOf="@+id/editusername"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="@+id/editusername"
+      app:layout_constraintTop_toBottomOf="@+id/editusername" />
 
   <EditText
       android:id="@+id/editTextSifre"
@@ -65,7 +75,7 @@
       android:inputType="textPassword"
       app:layout_constraintBottom_toTopOf="@+id/editagainTextSifre"
       app:layout_constraintEnd_toEndOf="@+id/editTextMail"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="@+id/editTextMail"
       app:layout_constraintTop_toBottomOf="@+id/editTextMail" />
 
@@ -78,7 +88,7 @@
       android:inputType="textPassword"
       app:layout_constraintBottom_toTopOf="@+id/buttonGiris"
       app:layout_constraintEnd_toEndOf="@+id/editTextSifre"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="@+id/editTextSifre"
       app:layout_constraintTop_toBottomOf="@+id/editTextSifre" />
 
@@ -89,7 +99,7 @@
       android:text="Kaydol"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="@+id/editagainTextSifre"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="@+id/editagainTextSifre"
       app:layout_constraintTop_toBottomOf="@+id/editagainTextSifre" />
 
