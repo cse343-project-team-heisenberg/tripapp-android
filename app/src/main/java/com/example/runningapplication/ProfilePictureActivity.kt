@@ -49,7 +49,7 @@ class ProfilePictureActivity : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             when(requestCode) {
                 1 -> {
                 secilenGorsel = data?.data
@@ -89,7 +89,7 @@ class ProfilePictureActivity : AppCompatActivity() {
                             }
 
                         /*
-                      Firebase.firestore.collection("media").document(uuid)
+                        Firebase.firestore.collection("media").document(uuid)
                           .collection("profileId").document("datas")
                           .set(map)
                           .addOnSuccessListener {
