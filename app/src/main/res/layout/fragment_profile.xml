@@ -9,55 +9,94 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="212dp"
-        android:layout_height="149dp"
+        android:layout_width="213dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="48dp"
         android:src="@drawable/ic_baseline_person_24"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="36dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="214dp"
+        android:layout_height="49dp"
+        android:text="name-surname"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="277dp"
+        android:layout_height="79dp"
+        android:text="about me"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/follows"
         android:layout_width="91dp"
-        android:layout_height="48dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="368dp"
         android:text="Follows"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="341dp" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="210dp"
-        android:layout_height="40dp"
-        android:text="name-surname"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="207dp" />
-
-    <TextView
-        android:id="@+id/about"
-        android:layout_width="274dp"
-        android:layout_height="68dp"
-        android:text="about me"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="247dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/interests"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/interests"
         android:layout_width="91dp"
-        android:layout_height="48dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
         android:text="Interests"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="341dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/followers"
+        app:layout_constraintTop_toBottomOf="@+id/about"
+        app:layout_constraintVertical_bias="0.008" />
 
     <TextView
         android:id="@+id/followers"
         android:layout_width="91dp"
-        android:layout_height="48dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="368dp"
         android:text="Followers"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="341dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_person_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ViewStub
+        android:id="@+id/viewStub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout="@layout/activity_post"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="417dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import com.example.runningapplication.databinding.ActivityPostBinding
 import com.google.firebase.auth.ktx.auth
@@ -34,13 +35,18 @@ class PostActivity : AppCompatActivity() {
             map.put("post_picture",uuid)
             Firebase.storage.reference.child(Firebase.auth.currentUser!!.uid).child("postPicture")
                 .child(uuid)
-                .putFile(secilenGorsel!!)
+                .putFile(secilenGorsel!!).addOnCompleteListener {
+                    Log.e("TAG",it.result.uploadSessionUri.toString())
+
+                }
+            /*
             Firebase.firestore.collection("app")
                 .document(Firebase.auth.currentUser!!.uid)
                 .collection("postPicture")
                 .add(map).addOnSuccessListener {
                     Toast.makeText(applicationContext,"Kaydetti", Toast.LENGTH_LONG).show()
                 }
+            */
 
 
         }

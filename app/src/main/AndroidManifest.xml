@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RunningApplication">
         <activity
+            android:name=".EditProfileUser"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ShareActivity"
             android:exported="false">
             <meta-data
