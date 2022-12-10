@@ -1,20 +1,16 @@
 package com.example.runningapplication
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.Toast
 import com.example.runningapplication.databinding.ActivityRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
-
 import com.google.firebase.auth.FirebaseAuth
-import java.io.IOException
 
 class Register : AppCompatActivity() {
     private lateinit var binding : ActivityRegisterBinding
@@ -26,15 +22,8 @@ class Register : AppCompatActivity() {
         setContentView(binding.root)
         shared = getSharedPreferences("com.example.runningapplication",Context.MODE_PRIVATE)
 
-
             binding.buttonGiris.setOnClickListener {
-            val mail = binding.editTextMail.text.toString().trim()
-                /*val mail = "m.cagri0205@gmail.com"
-                val name ="das"
-                val surname = "binding.editSurname.text.toString().trim()"
-                val password = "123456"
-                val againpassword = "123456"
-                */
+                val mail = binding.editTextMail.text.toString().trim()
                 val name = binding.editName.text.toString().trim()
                 val surname = binding.editSurname.text.toString().trim()
                 val username = binding.editusername.text.toString().trim()
@@ -45,24 +34,21 @@ class Register : AppCompatActivity() {
                     it.edit().putString("name",name).apply()
                     it.edit().putString("surname",surname).apply()
                     it.edit().putString("password",password).apply()
+                    it.edit().putString("mail",mail).apply()
+                    it.edit().putString("username",username).apply()
                 }
-
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,password).addOnSuccessListener {
                         Toast.makeText(this,"Onay Kodu Gönderildi", Toast.LENGTH_LONG).show()
                         mailGonder()
-
-
                 }.addOnFailureListener {
                     Toast.makeText(this,it.localizedMessage.toString(), Toast.LENGTH_LONG).show()
                 }
-
             }else{
                 Toast.makeText(this@Register, "Hatalı giriş denemesi", Toast.LENGTH_SHORT).show()
             }
 
         }
     }
-
 
 
     private fun mailGonder(){

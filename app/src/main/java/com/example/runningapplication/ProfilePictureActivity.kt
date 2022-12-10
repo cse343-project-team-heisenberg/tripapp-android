@@ -75,19 +75,20 @@ class ProfilePictureActivity : AppCompatActivity() {
                         Firebase.storage.reference.child("app").child(Firebase.auth.currentUser!!.uid).child("profilePicture")
                             .child(uuid)
                             .putFile(secilenGorsel!!).addOnCompleteListener {
-                                Toast.makeText(applicationContext,"Başarılı",Toast.LENGTH_LONG).show()
+                                Toast.makeText(applicationContext,it!!.result!!.storage!!.downloadUrl.toString(),Toast.LENGTH_LONG).show()
+
 
                             }.addOnFailureListener {
                                 Toast.makeText(applicationContext,it.localizedMessage.toString(),Toast.LENGTH_LONG).show()
                             }
+                        /*
                         Firebase.firestore.collection("app")
                             .document(Firebase.auth.currentUser!!.uid)
-                            .collection("profilePicture")
-                            .add(map).addOnSuccessListener {
-                                Toast.makeText(applicationContext,"Kaydetti",Toast.LENGTH_LONG).show()
-                                shared!!.edit().putBoolean("profilePicture",true).apply()
-                            }
+                            .set(map).addOnCompleteListener {
+                                Toast.makeText(applicationContext,"Başarı ile kaydedildi",Toast.LENGTH_LONG).show()
 
+                            }
+                        */
                         /*
                         Firebase.firestore.collection("media").document(uuid)
                           .collection("profileId").document("datas")

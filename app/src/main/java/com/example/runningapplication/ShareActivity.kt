@@ -1,5 +1,6 @@
 package com.example.runningapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,11 @@ class ShareActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_tutucu,HomeFragment())
             .commit()
+
+        binding.floatActionButtonPost.setOnClickListener {
+            val intent = Intent(applicationContext,PostActivity::class.java)
+            startActivity(intent)
+        }
         binding.bottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
             override fun onTabSelected(
                 lastIndex: Int,

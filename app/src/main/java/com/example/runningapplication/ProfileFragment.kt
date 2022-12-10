@@ -1,5 +1,6 @@
 package com.example.runningapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,10 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater,container,false)
+        binding.floatingActionButton.setOnClickListener {
+            val intent = Intent(requireContext(),ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
 
         return binding.root
