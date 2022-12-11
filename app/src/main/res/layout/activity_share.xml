@@ -13,9 +13,11 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/fragment_tutucu"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/discover" />
+
 
     <FrameLayout
         android:id="@+id/fragment_tutucu"
@@ -23,11 +25,12 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </FrameLayout>
-
 
     <nl.joery.animatedbottombar.AnimatedBottomBar
         android:id="@+id/bottom_bar"

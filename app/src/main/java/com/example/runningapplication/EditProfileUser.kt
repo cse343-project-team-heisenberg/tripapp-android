@@ -4,10 +4,9 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.runningapplication.Model.UserInfo
 import com.example.runningapplication.databinding.ActivityEditProfileUserBinding
-import com.example.runningapplication.databinding.ActivityProfileBinding
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -61,6 +60,11 @@ class EditProfileUser : AppCompatActivity() {
                     .update(map).addOnCompleteListener {
                         Toast.makeText(applicationContext,"Güncellendi",Toast.LENGTH_LONG).show()
                     }
+            }
+            if(password.isNullOrEmpty() == true) {
+                Firebase.auth.currentUser!!.updatePassword(password).addOnCompleteListener {
+                    Toast.makeText(applicationContext,"Şifreniz Onaylandı",Toast.LENGTH_LONG).show()
+                }
             }
 
         }

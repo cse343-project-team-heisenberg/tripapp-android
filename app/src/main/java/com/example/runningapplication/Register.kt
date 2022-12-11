@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.runningapplication.View.MainActivity
 import com.example.runningapplication.databinding.ActivityRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -59,7 +60,7 @@ class Register : AppCompatActivity() {
                     override fun onComplete(p0: Task<Void>) {
                         if(p0.isSuccessful){
                             Toast.makeText(this@Register,"Mailinizi kontrol edin, mailinizi onaylayın", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@Register,MainActivity::class.java)
+                            val intent = Intent(this@Register, MainActivity::class.java)
                            bitmap?.let {
 
                                intent.putExtra("flag",true)
