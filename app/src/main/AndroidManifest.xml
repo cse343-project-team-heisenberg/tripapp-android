@@ -26,21 +26,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PostActivity"
+            android:name=".View.PostActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfilePictureActivity"
+            android:name=".View.ProfilePictureActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".DetailActivity"
+            android:name=".View.DetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -67,14 +67,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".View.ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true" />
     </application>
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.runningapplication.View.PostActivity
 import com.example.runningapplication.databinding.ActivityShareBinding
 import nl.joery.animatedbottombar.AnimatedBottomBar
 
@@ -21,7 +22,7 @@ class ShareActivity : AppCompatActivity() {
             .commit()
 
         binding.floatActionButtonPost.setOnClickListener {
-            val intent = Intent(applicationContext,PostActivity::class.java)
+            val intent = Intent(applicationContext, PostActivity::class.java)
             startActivity(intent)
         }
         binding.bottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {

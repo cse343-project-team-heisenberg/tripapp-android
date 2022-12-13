@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.runningapplication.View.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         val handler  = Handler().postDelayed(object:Runnable{
             override fun run() {
-                val Intent = Intent(applicationContext,MainActivity::class.java)
+                val Intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(Intent)
                 finish()
             }
