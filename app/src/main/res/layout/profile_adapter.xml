@@ -23,34 +23,37 @@
 
         <TextView
             android:id="@+id/textViewDescription"
-            android:layout_width="213dp"
-            android:layout_height="73dp"
+            android:layout_width="167dp"
+            android:layout_height="52dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewProfilePicture"
+            app:layout_constraintBottom_toBottomOf="@+id/imageTemp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewProfilePicture"
-            app:layout_constraintTop_toTopOf="@+id/imageViewProfilePicture" />
+            app:layout_constraintHorizontal_bias="0.685"
+            app:layout_constraintStart_toEndOf="@+id/imageTemp"
+            app:layout_constraintTop_toTopOf="@+id/imageTemp" />
 
         <TextView
             android:id="@+id/textView_userName"
-            android:layout_width="214dp"
+            android:layout_width="0dp"
             android:layout_height="42dp"
-            android:layout_marginStart="34dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="16dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePicture"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageViewProfilePicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imageTemp"
+            android:layout_width="226dp"
+            android:layout_height="139dp"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_ProfilePicture"
+            app:layout_constraintVertical_bias="1.0"
             tools:srcCompat="@tools:sample/avatars" />
 
 

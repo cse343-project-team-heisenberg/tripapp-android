@@ -1,5 +1,6 @@
 package com.example.runningapplication.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,14 +19,16 @@ class ProfileAdapter(val data: UserAllData): RecyclerView.Adapter<ProfileAdapter
     }
 
     override fun onBindViewHolder(holder: AdapterVH, position: Int) {
-       holder.binding.textViewUserName.text = data.UserInfo.userName
+       holder.binding.textViewUserName.text = data.UserInfo!!.userName
        Picasso.get().load(data.profilePicture).into(holder.binding.imageViewProfilePicture)
-       holder.binding.textViewDescription.text = data.data.data.getOrNull(position)!!.description
-       Picasso.get().load(data.data.data.getOrNull(position)!!.pictureUrl).into(holder.binding.imageViewProfilePicture)
+        Log.e("DENEME",data.UserInfo!!.userName.toString())
+       holder.binding.textViewDescription.text = data.data!!.data!!.get(position)!!.description
+       Picasso.get().load(data.data!!.data!!.get(position)!!.pictureUrl).into(holder.binding.imageTemp)
     }
 
     override fun getItemCount(): Int {
-        return data.data.data.size
+        Log.e("TAG",data.data!!.data!!.size.toString())
+        return data.data!!.data!!.size
     }
 
 }
