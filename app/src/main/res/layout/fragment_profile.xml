@@ -10,8 +10,10 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="285dp"
-        android:layout_height="215dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="63dp"
         android:src="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,25 +21,31 @@
 
     <TextView
         android:id="@+id/textNameSurname"
-        android:layout_width="214dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
         android:text="name-surname"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/about"
-        android:layout_width="321dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
         android:text="about me"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textFollows"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNameSurname" />
 
@@ -45,70 +53,62 @@
         android:id="@+id/textFollows"
         android:layout_width="91dp"
         android:layout_height="49dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black"
         android:text="Follows"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toStartOf="@+id/textInterests"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/about" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textInterests"
         android:layout_width="91dp"
         android:layout_height="49dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
         android:text="Interests"
+        android:textColor="@color/black"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/textFollows"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toStartOf="@+id/textFollowers"
-        app:layout_constraintTop_toTopOf="@+id/textFollows"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textFollows" />
 
     <TextView
         android:id="@+id/textFollowers"
         android:layout_width="91dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="356dp"
+        android:layout_marginBottom="12dp"
         android:text="Followers"
+        android:textColor="@color/black"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/about"
-        app:layout_constraintTop_toTopOf="@+id/textInterests"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textInterests" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_person_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="316dp"
+        tools:layout_editor_absoluteY="659dp" />
 
     <ViewStub
         android:id="@+id/viewStub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout="@layout/activity_post"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout="@layout/activity_post" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="393dp"
-        android:layout_height="351dp"
-        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFollows" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

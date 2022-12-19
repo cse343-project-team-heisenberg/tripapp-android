@@ -1,2 +1,3 @@
 package com.example.runningapplication.Model
-data class Post (var data:ArrayList<PostDetail>,var uuid: String)
+data class Post (var data:ArrayList<PostDetail>?=null,
+                 var uuid: String?=null)
