@@ -31,7 +31,7 @@ class ProfilePictureActivity : AppCompatActivity() {
     private var shared : SharedPreferences ? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       shared = getSharedPreferences("com.example.runningapplication", Context.MODE_PRIVATE)
+        shared = getSharedPreferences("com.example.runningapplication", Context.MODE_PRIVATE)
         binding = ActivityProfilePictureBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -52,7 +52,7 @@ class ProfilePictureActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK) {
             when(requestCode) {
                 1 -> {
-                secilenGorsel = data?.data
+                    secilenGorsel = data?.data
                     if(secilenGorsel != null) {
                         if(Build.VERSION.SDK_INT >= 28){
                             val source = ImageDecoder.createSource(this.contentResolver,secilenGorsel!!)
@@ -66,8 +66,8 @@ class ProfilePictureActivity : AppCompatActivity() {
                         val data: List<Bitmap> = ArrayList<Bitmap>()
                         val lt: ArrayList<String> = arrayListOf()
 
-                            val list = bitmapToString(secilenBitmap!!)
-                            lt.add(list.toString())
+                        val list = bitmapToString(secilenBitmap!!)
+                        lt.add(list.toString())
 
                         val uuid = UUID.randomUUID().toString()
                         val map = HashMap<String,String>()
@@ -75,7 +75,6 @@ class ProfilePictureActivity : AppCompatActivity() {
                         Firebase.storage.reference.child("app").child(Firebase.auth.currentUser!!.uid).child("profilePicture")
                             .child(uuid)
                             .putFile(secilenGorsel!!).addOnCompleteListener {
-                                Toast.makeText(applicationContext,it!!.result!!.storage!!.downloadUrl.toString(),Toast.LENGTH_LONG).show()
 
 
                             }.addOnFailureListener {

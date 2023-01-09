@@ -22,7 +22,12 @@ class Register : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         shared = getSharedPreferences("com.example.runningapplication",Context.MODE_PRIVATE)
-
+        shared!!.edit().remove("name").apply()
+        shared!!.edit().remove("surname").apply()
+        shared!!.edit().remove("password").apply()
+        shared!!.edit().remove("mail").apply()
+        shared!!.edit().remove("username").apply()
+        shared!!.edit().putBoolean("isItSend",false).apply()
             binding.buttonGiris.setOnClickListener {
                 val mail = binding.editTextMail.text.toString().trim()
                 val name = binding.editName.text.toString().trim()

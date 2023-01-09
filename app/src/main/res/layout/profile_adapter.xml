@@ -6,8 +6,22 @@
     android:layout_height="250dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintId"
         android:layout_width="match_parent"
         android:layout_height="250dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="17dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toTopOf="@+id/imageTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_ProfilePicture"></View>
 
         <ImageView
             android:id="@+id/imageView_ProfilePicture"
@@ -23,10 +37,12 @@
 
         <TextView
             android:id="@+id/textViewDescription"
-            android:layout_width="167dp"
+            android:layout_width="0dp"
             android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageTemp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.685"
             app:layout_constraintStart_toEndOf="@+id/imageTemp"
@@ -46,8 +62,8 @@
 
         <ImageView
             android:id="@+id/imageTemp"
-            android:layout_width="226dp"
-            android:layout_height="139dp"
+            android:layout_width="160dp"
+            android:layout_height="130dp"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"

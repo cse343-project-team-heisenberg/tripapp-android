@@ -25,6 +25,9 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+
+
     }
 
     @SuppressLint("SetTextI18n")

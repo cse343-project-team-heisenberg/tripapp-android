@@ -5,10 +5,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.runningapplication.HomeFragmentDirections
 import com.example.runningapplication.Model.MainPostDataClass
-import com.example.runningapplication.ProfilePictureActivity
+import com.example.runningapplication.View.PostDetailActivity
+import com.example.runningapplication.View.ProfileDetailActivity
+import com.example.runningapplication.View.SelfProfileActivity
 import com.example.runningapplication.databinding.MainLayoutBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 
@@ -31,13 +34,37 @@ class MainAdapter(val data: ArrayList<MainPostDataClass>,val context: Context): 
            holder.binding.constraintProfile.setOnClickListener {
                val uuid = data.get(position).userInfo!!.uuid.toString()
                //Navigation.findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToPostDetailFragment()
-                val intent = Intent(context,ProfilePictureActivity::class.java)
-               context.startActivity(intent)
+               if(uuid!!.equals(Firebase.auth!!.currentUser!!.uid)){
+                   val intent = Intent(context, SelfProfileActivity::class.java)
+                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                   intent.putExtra("uuid",uuid)
+                   context.startActivity(intent)
+               }else {
+                   val intent = Intent(context, ProfileDetailActivity::class.java)
+                   intent.putExtra("uuid",uuid)
+                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                   context.startActivity(intent)
+               }
+
            }
+            holder.binding.constraintPostDetail.setOnClickListener {
+                val uuid = data.get(position).userInfo!!.uuid.toString()
+                val intent = Intent(context, PostDetailActivity::class.java)
+                intent.putExtra("uuid",uuid)
+
+                passClass = data.get(position)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
     }
 
     override fun getItemCount(): Int {
         return data.size
+    }
+    companion object {
+        var passClass: MainPostDataClass?=null
+
+
     }
 
 }

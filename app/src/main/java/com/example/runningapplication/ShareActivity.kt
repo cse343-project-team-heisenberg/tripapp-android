@@ -21,10 +21,7 @@ class ShareActivity : AppCompatActivity() {
             .add(R.id.fragment_tutucu,HomeFragment())
             .commit()
 
-        binding.floatActionButtonPost.setOnClickListener {
-            val intent = Intent(applicationContext, PostActivity::class.java)
-            startActivity(intent)
-        }
+
         binding.bottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
             override fun onTabSelected(
                 lastIndex: Int,
@@ -34,7 +31,6 @@ class ShareActivity : AppCompatActivity() {
             ) {
 
                 if(newIndex != lastIndex){
-                    Toast.makeText(applicationContext,"Burada ${lastIndex}",Toast.LENGTH_LONG).show()
                     when (newIndex){
                         0 -> {
                             temp = HomeFragment()

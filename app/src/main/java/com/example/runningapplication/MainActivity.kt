@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonGiris.setOnClickListener {
-            val mail = "m.yilmaz2019@gtu.edu.tr"
+            val mail = "girayyagmur5858@gmail.com"
             val password = "123456"
             if (mail.isNotEmpty() && password.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(mail,password).addOnSuccessListener {
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                             Firebase.firestore.collection("Post").document(Firebase.auth.currentUser!!.uid)
                                 .set(map)
                                 .addOnCompleteListener {
-                                    Toast.makeText(applicationContext,"Burada",Toast.LENGTH_LONG).show()
                                 }
                         }
                         val data = boolean.getBoolean("profilePicture",false)
