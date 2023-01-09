@@ -1,7 +1,8 @@
 package com.example.runningapplication.Model
 
 data class MainPostDataClass(
-    val userInfo: UserInfo? = null,
-    val postDetail: PostDetail? = null,
-    val profilePicture:String? = null
+    var userInfo: UserInfo? = null,
+    var postDetail: PostDetail? = null,
+    var profilePicture:String? = null,
+
 )

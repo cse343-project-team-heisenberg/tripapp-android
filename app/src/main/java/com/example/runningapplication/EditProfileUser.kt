@@ -61,7 +61,7 @@ class EditProfileUser : AppCompatActivity() {
                         Toast.makeText(applicationContext,"Güncellendi",Toast.LENGTH_LONG).show()
                     }
             }
-            if(password.isNullOrEmpty() == true) {
+            if(password.isNullOrEmpty() == false) {
                 Firebase.auth.currentUser!!.updatePassword(password).addOnCompleteListener {
                     Toast.makeText(applicationContext,"Şifreniz Onaylandı",Toast.LENGTH_LONG).show()
                 }

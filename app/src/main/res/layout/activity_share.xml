@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ShareActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatActionButtonPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:visibility="visible"
-        app:backgroundTint="@color/customColor"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_tutucu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/discover" />
-
 
     <FrameLayout
         android:id="@+id/fragment_tutucu"

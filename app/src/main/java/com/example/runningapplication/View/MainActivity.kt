@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.runningapplication.Model.UserAllData
 import com.example.runningapplication.Model.UserInfo
 import com.example.runningapplication.Register
 import com.example.runningapplication.ShareActivity
@@ -12,6 +13,7 @@ import com.example.runningapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonGiris.setOnClickListener {
-            val mail = "m.yilmaz2019@gtu.edu.tr"
+            val mail = "girayyagmur5858@gmail.com"
             val password = "123456"
             if (mail.isNotEmpty() && password.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(mail,password).addOnSuccessListener {
@@ -45,31 +47,27 @@ class MainActivity : AppCompatActivity() {
                                 name.toString(), surname.toString(), username.toString(),
                                 mail.toString(),
                                 password.toString(),Firebase.auth.currentUser!!.uid.toString())
-                           // map.put("name",name!!)
-                           // map.put("surname",surname!!)
-                           // map.put("password",password!!)
-                           // map.put("username",username!!)
-                           // map.put("mail",mail!!)
                             map.put("UserInfo",userInfo)
                             boolean.edit().putBoolean("isItSend",true).apply()
                             Firebase.firestore.collection("Post").document(Firebase.auth.currentUser!!.uid)
                                 .set(map)
                                 .addOnCompleteListener {
-                                    Toast.makeText(applicationContext,"Burada",Toast.LENGTH_LONG).show()
+
                                 }
                         }
-                        val data = boolean.getBoolean("profilePicture",false)
-                        if (boolean!=null){
-                            if (data) {
-                                val intent = Intent(applicationContext, ShareActivity::class.java)
-                                startActivity(intent)
-                                finish()
-                            }else {
-                                val intent = Intent(applicationContext, ProfilePictureActivity::class.java)
-                                startActivity(intent)
-                                finish()
+                        Firebase.firestore.collection("Post").document(Firebase.auth.currentUser!!.uid)
+                            .get().addOnCompleteListener {
+                                val data = it.result.toObject<UserAllData>()
+                                if(data?.profilePicture==null){
+                                    val intent = Intent(applicationContext, ProfilePictureActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }else{
+                                    val intent = Intent(applicationContext, ShareActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
                             }
-                        }
                     }
 
                 }.addOnFailureListener {
